@@ -7,19 +7,19 @@
     {{-- Welcome Bar --}}
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div>
-            <h1 class="text-3xl font-bold text-rich-black">Hai, {{ Str::limit(Auth::user()->name, 20) }}! 👋</h1>
+            <h1 class="text-3xl font-bold text-rich-black">Hai, {{ Str::limit(Auth::user()->name, 20) }}!</h1>
             <p class="text-cool-gray mt-1">Terus semangat belajar literasi keuangan hari ini.</p>
         </div>
         @if($userPoints)
         <div class="flex items-center gap-4 flex-wrap">
             <span class="{{ $levelLabel === 'Expert' || $levelLabel === 'Master' ? 'level-expert' : ($levelLabel === 'Mahir' ? 'level-mahir' : ($levelLabel === 'Pelajar' ? 'level-pelajar' : 'level-pemula')) }}">
-                ⭐ {{ $levelLabel }}
+                {{ $levelLabel }}
             </span>
             <div class="card px-4 py-2 flex items-center gap-2">
                 <span class="text-2xl font-bold text-deep-fern-green">{{ number_format($totalPoints) }}</span>
                 <span class="text-xs text-cool-gray">poin</span>
             </div>
-            <a href="{{ route('courses.index') }}" class="btn-primary text-sm">+ Pelajaran Baru</a>
+            <a href="{{ route('modules.index') }}" class="btn-primary text-sm">+ Modul Baru</a>
         </div>
         @endif
     </div>
@@ -27,22 +27,22 @@
     {{-- Stats Row --}}
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <div class="stat-card animate-fade-in-up">
-            <div class="text-2xl mb-1">📚</div>
+            <div class="text-2xl mb-1"></div>
             <div class="stat-number">{{ $enrolledCourses->count() }}</div>
             <div class="stat-label">Kursus Diikuti</div>
         </div>
         <div class="stat-card animate-fade-in-up delay-100">
-            <div class="text-2xl mb-1">✅</div>
+            <div class="text-2xl mb-1"></div>
             <div class="stat-number text-deep-fern-green">{{ $completedCourses }}</div>
             <div class="stat-label">Kursus Selesai</div>
         </div>
         <div class="stat-card animate-fade-in-up delay-200">
-            <div class="text-2xl mb-1">🏆</div>
+            <div class="text-2xl mb-1"></div>
             <div class="stat-number" style="color:#715039;">{{ $certificates }}</div>
             <div class="stat-label">Sertifikat</div>
         </div>
         <div class="stat-card animate-fade-in-up delay-300">
-            <div class="text-2xl mb-1">🔥</div>
+            <div class="text-2xl mb-1"></div>
             <div class="stat-number text-deep-fern-green">{{ number_format($totalPoints) }}</div>
             <div class="stat-label">Total Poin</div>
         </div>
@@ -57,7 +57,7 @@
             @if($userPoints && $levelProgress['next'])
             <div class="card p-6">
                 <div class="flex items-center justify-between mb-3">
-                    <h2 class="font-bold text-rich-black">⬆️ Progress Level</h2>
+                    <h2 class="font-bold text-rich-black">Progress Level</h2>
                     <span class="text-sm text-cool-gray">{{ $levelProgress['needed'] }} poin lagi ke <strong>{{ $levelProgress['next']['label'] }}</strong></span>
                 </div>
                 <div class="progress-bar">
@@ -74,7 +74,7 @@
             @if($chartData->count() > 0)
             <div class="card p-6">
                 <div class="flex items-center justify-between mb-4">
-                    <h2 class="font-bold text-rich-black">📊 Grafik Perkembangan Belajar</h2>
+                    <h2 class="font-bold text-rich-black">Grafik Perkembangan Belajar</h2>
                     <span class="badge-green text-xs">Pre-test vs Post-test</span>
                 </div>
                 <div class="chart-container">
@@ -86,8 +86,8 @@
             {{-- Kursus Berlanjut --}}
             <div class="card p-6">
                 <div class="flex items-center justify-between mb-4">
-                    <h2 class="font-bold text-rich-black">📖 Kursus Berlanjut</h2>
-                    <a href="{{ route('courses.index') }}" class="text-sm text-deep-fern-green font-medium hover:underline">Jelajahi Semua</a>
+                    <h2 class="font-bold text-rich-black">Kursus Berlanjut</h2>
+                    <a href="{{ route('modules.index') }}" class="text-sm text-deep-fern-green font-medium hover:underline">Jelajahi Semua</a>
                 </div>
 
                 @forelse($enrolledCourses->take(4) as $progress)
@@ -111,9 +111,9 @@
                 </div>
                 @empty
                 <div class="text-center py-8">
-                    <div class="text-4xl mb-2">📚</div>
+                    <div class="text-4xl mb-2"></div>
                     <p class="text-cool-gray text-sm mb-4">Kamu belum mengikuti kursus apapun.</p>
-                    <a href="{{ route('courses.index') }}" class="btn-primary text-sm">Mulai Belajar</a>
+                    <a href="{{ route('modules.index') }}" class="btn-primary text-sm">Mulai Belajar</a>
                 </div>
                 @endforelse
             </div>
@@ -121,7 +121,7 @@
             {{-- Aktivitas Quiz Terbaru --}}
             @if($recentActivity->count() > 0)
             <div class="card p-6">
-                <h2 class="font-bold text-rich-black mb-4">🎯 Aktivitas Quiz Terbaru</h2>
+                <h2 class="font-bold text-rich-black mb-4">Aktivitas Quiz Terbaru</h2>
                 <div class="space-y-3">
                     @foreach($recentActivity as $result)
                     <div class="flex items-center justify-between p-3 rounded-xl bg-subtle-ash">
@@ -135,7 +135,7 @@
                         <div class="text-right">
                             @php $sc = $result->score ?? 0; @endphp
                             <p class="text-lg font-bold {{ $sc >= 70 ? 'text-deep-fern-green' : 'text-red-500' }}">{{ $sc }}%</p>
-                            <p class="text-xs {{ $sc >= 70 ? 'text-deep-fern-green' : 'text-red-500' }}">{{ $sc >= 70 ? '✅ Lulus' : '❌ Ulangi' }}</p>
+                            <p class="text-xs {{ $sc >= 70 ? 'text-deep-fern-green' : 'text-red-500' }}">{{ $sc >= 70 ? 'Lulus' : 'Ulangi' }}</p>
                         </div>
                     </div>
                     @endforeach
@@ -180,11 +180,11 @@
 
             {{-- Quick Actions --}}
             <div class="card p-6">
-                <h3 class="font-bold text-rich-black mb-4">⚡ Aksi Cepat</h3>
+                <h3 class="font-bold text-rich-black mb-4">Aksi Cepat</h3>
                 <div class="space-y-2">
-                    <a href="{{ route('courses.index') }}" class="sidebar-link w-full">
+                    <a href="{{ route('modules.index') }}" class="sidebar-link w-full">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                        Jelajahi Kursus
+                        Jelajahi Modul
                     </a>
                     <a href="{{ route('modules.index') }}" class="sidebar-link w-full">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
@@ -211,7 +211,7 @@
 
             {{-- Reminder Card --}}
             <div class="card-mint p-6 rounded-2xl">
-                <h3 class="font-bold text-rich-black mb-3">💡 Tip Finansial Hari Ini</h3>
+                <h3 class="font-bold text-rich-black mb-3">Tip Finansial Hari Ini</h3>
                 @php $tips = [
                     'Sisihkan minimal 20% penghasilan untuk tabungan sebelum belanja.',
                     'Jangan pernah meminjam dari pinjol yang tidak terdaftar di OJK.',

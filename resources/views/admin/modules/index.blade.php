@@ -9,7 +9,7 @@
         <div class="flex items-center gap-4">
             <a href="{{ route('admin.dashboard') }}" class="btn-ghost text-sm">← Admin Panel</a>
             <div>
-                <h1 class="text-2xl font-bold text-rich-black">📚 Kelola Modul</h1>
+                <h1 class="text-2xl font-bold text-rich-black">Kelola Modul</h1>
                 <p class="text-cool-gray text-sm">{{ $modules->count() }} modul terdaftar</p>
             </div>
         </div>
@@ -41,7 +41,7 @@
                     <td class="text-center font-bold text-cool-gray w-16">{{ $module->order }}</td>
                     <td>
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl" style="background:#e1fdea;">{{ $module->icon ?? '📚' }}</div>
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl" style="background:#e1fdea;">{{ $module->icon ?? '' }}</div>
                             <div>
                                 <p class="font-semibold text-rich-black">{{ $module->title }}</p>
                                 <p class="text-xs text-cool-gray line-clamp-1 max-w-xs">{{ $module->description }}</p>
@@ -50,7 +50,7 @@
                     </td>
                     <td>
                         @if($module->youtube_embed_url)
-                            <a href="{{ $module->youtube_link }}" target="_blank" class="badge-green text-xs">▶ Video</a>
+                            <a href="{{ $module->youtube_link }}" target="_blank" class="badge-green text-xs">Video</a>
                         @else
                             <span class="badge-gray text-xs">Tidak ada</span>
                         @endif
@@ -58,7 +58,7 @@
                     <td class="font-bold text-center">{{ $module->courses_count ?? $module->courses->count() }}</td>
                     <td>
                         <span class="{{ $module->status === 'published' ? 'badge-green' : 'badge-gray' }}">
-                            {{ $module->status === 'published' ? '✅ Published' : '📝 Draft' }}
+                            {{ $module->status === 'published' ? 'Published' : 'Draft' }}
                         </span>
                     </td>
                     <td>
@@ -75,7 +75,7 @@
                 @empty
                 <tr>
                     <td colspan="6" class="text-center py-12">
-                        <div class="text-4xl mb-3">📚</div>
+                        <div class="text-4xl mb-3"></div>
                         <p class="text-cool-gray mb-4">Belum ada modul</p>
                         <a href="{{ route('admin.modules.create') }}" class="btn-primary text-sm">Tambah Modul Pertama</a>
                     </td>

@@ -68,7 +68,7 @@
 
         <!-- Print & Download -->
         <div class="text-center mt-12">
-            <button onclick="window.print()" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition font-semibold">🖨️ Cetak / Unduh PDF</button>
+            <button onclick="window.print()" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition font-semibold">Cetak / Unduh PDF</button>
         </div>
     </div>
 @endsection

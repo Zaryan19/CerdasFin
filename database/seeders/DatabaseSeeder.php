@@ -44,7 +44,6 @@ class DatabaseSeeder extends Seeder
         $m1 = Module::firstOrCreate(['slug' => 'dasar-literasi-keuangan'], [
             'title'        => 'Dasar Literasi Keuangan',
             'description'  => 'Pahami konsep dasar keuangan: menabung, anggaran 50/30/20, dan fondasi finansial yang kuat untuk masa depan.',
-            'icon'         => '💰',
             'order'        => 1,
             'is_published' => true,
         ]);
@@ -101,7 +100,6 @@ class DatabaseSeeder extends Seeder
         $m2 = Module::firstOrCreate(['slug' => 'bahaya-pinjol-ilegal'], [
             'title'        => 'Bahaya Pinjol Ilegal',
             'description'  => 'Kenali ciri-ciri pinjol ilegal, dampak bunga majemuk yang mencekik, dan cara melaporkannya ke OJK.',
-            'icon'         => '🚫',
             'order'        => 2,
             'is_published' => true,
         ]);
@@ -149,7 +147,6 @@ class DatabaseSeeder extends Seeder
         $m3 = Module::firstOrCreate(['slug' => 'bahaya-judi-online'], [
             'title'        => 'Bahaya Judi Online',
             'description'  => 'Pahami matematika kekalahan judi online, dampak psikologis, dan strategi keluar dari kecanduan.',
-            'icon'         => '🎰',
             'order'        => 3,
             'is_published' => true,
         ]);
@@ -195,7 +192,6 @@ class DatabaseSeeder extends Seeder
         $m4 = Module::firstOrCreate(['slug' => 'pengelolaan-keuangan-sehat'], [
             'title'        => 'Pengelolaan Keuangan Sehat',
             'description'  => 'Investasi aman (emas, deposito), dana darurat, dan perencanaan finansial jangka panjang.',
-            'icon'         => '📈',
             'order'        => 4,
             'is_published' => true,
         ]);

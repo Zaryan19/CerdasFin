@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Courses (read-only - public)
-Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
+Route::redirect('/courses', '/modules')->name('courses.index');
 Route::get('/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
 
 // Modules (public listing)

@@ -82,7 +82,7 @@
                                 <p class="text-gray-600 mb-4">{{ Str::limit($module->description, 100) }}</p>
                                 <div class="flex justify-between items-center">
                                     <span class="text-sm text-blue-600 font-semibold">{{ $module->courses()->count() }} Kursus</span>
-                                    <a href="{{ route('courses.index') }}" class="text-blue-600 hover:text-blue-800 font-semibold">Lihat Kursus →</a>
+                                    <a href="{{ route('modules.index') }}" class="text-blue-600 hover:text-blue-800 font-semibold">Lihat Modul →</a>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                                 <p class="text-gray-600 mb-4">{{ Str::limit($course->description, 80) }}</p>
                                 <div class="flex justify-between items-center">
                                     @if($course->duration_minutes)
-                                        <span class="text-sm text-gray-500">⏱️ {{ $course->duration_minutes }} menit</span>
+                                        <span class="text-sm text-gray-500">{{ $course->duration_minutes }} menit</span>
                                     @endif
                                     <a href="{{ route('courses.show', $course) }}" class="text-blue-600 hover:text-blue-800 font-semibold">Mulai →</a>
                                 </div>
@@ -123,7 +123,7 @@
             @endif
 
             <div class="text-center mt-12">
-                <a href="{{ route('courses.index') }}" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition inline-block">Lihat Semua Kursus</a>
+                <a href="{{ route('modules.index') }}" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition inline-block">Lihat Semua Modul</a>
             </div>
         </div>
     </section>

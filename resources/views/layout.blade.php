@@ -33,7 +33,6 @@
                 {{-- Desktop Nav --}}
                 <div class="hidden lg:flex items-center gap-1">
                     <a href="{{ route('home') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-mint-green-glow {{ request()->routeIs('home') ? 'text-deep-fern-green bg-mint-green-glow' : '' }}">Beranda</a>
-                    <a href="{{ route('courses.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-mint-green-glow {{ request()->routeIs('courses.*') ? 'text-deep-fern-green bg-mint-green-glow' : '' }}">Kursus</a>
                     <a href="{{ route('modules.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-mint-green-glow {{ request()->routeIs('modules.*') ? 'text-deep-fern-green bg-mint-green-glow' : '' }}">Modul</a>
                     <a href="{{ route('forum.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-mint-green-glow {{ request()->routeIs('forum.*') ? 'text-deep-fern-green bg-mint-green-glow' : '' }}">Forum</a>
 
@@ -47,23 +46,23 @@
                         </button>
                         <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" class="absolute left-0 mt-1 w-56 bg-canvas-white rounded-2xl border border-gray-100 py-2 z-50" style="box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
                             <a href="{{ route('simulation.index') }}" class="flex items-center gap-3 px-4 py-2.5 hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green text-sm">
-                                <span class="text-lg">📊</span> Simulasi Keuangan
+                                <span class="text-lg"></span> Simulasi Keuangan
                             </a>
                             <a href="{{ route('tools.savings') }}" class="flex items-center gap-3 px-4 py-2.5 hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green text-sm">
-                                <span class="text-lg">🏦</span> Kalkulator Tabungan
+                                <span class="text-lg"></span> Kalkulator Tabungan
                             </a>
                             <a href="{{ route('tools.investment') }}" class="flex items-center gap-3 px-4 py-2.5 hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green text-sm">
-                                <span class="text-lg">📈</span> Kalkulator Investasi
+                                <span class="text-lg"></span> Kalkulator Investasi
                             </a>
                             <a href="{{ route('tools.budget') }}" class="flex items-center gap-3 px-4 py-2.5 hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green text-sm">
-                                <span class="text-lg">💰</span> Perencana Anggaran
+                                <span class="text-lg"></span> Perencana Anggaran
                             </a>
                         </div>
                     </div>
 
-                    <a href="{{ route('leaderboard.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-mint-green-glow {{ request()->routeIs('leaderboard.*') ? 'text-deep-fern-green bg-mint-green-glow' : '' }}">🏆 Leaderboard</a>
+                    <a href="{{ route('leaderboard.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-mint-green-glow {{ request()->routeIs('leaderboard.*') ? 'text-deep-fern-green bg-mint-green-glow' : '' }}">Leaderboard</a>
                     <a href="{{ route('awareness.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-melon-tint hover:text-terra-cotta flex items-center gap-1 {{ request()->routeIs('awareness.*') ? 'text-terra-cotta bg-melon-tint' : '' }}">
-                        <span class="text-sm">⚠️</span> Anti Pinjol &amp; Judol
+                        <span class="text-sm"></span> Anti Pinjol &amp; Judol
                     </a>
                 </div>
 
@@ -138,21 +137,20 @@
         {{-- Mobile Menu --}}
         <div x-show="mobileOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="lg:hidden border-t border-gray-100 bg-canvas-white">
             <div class="container-cf py-4 flex flex-col gap-1">
-                <a href="{{ route('home') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">🏠 Beranda</a>
-                <a href="{{ route('courses.index') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">📚 Kursus</a>
-                <a href="{{ route('modules.index') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">🎓 Modul</a>
-                <a href="{{ route('forum.index') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">💬 Forum</a>
-                <a href="{{ route('simulation.index') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">📊 Simulasi Keuangan</a>
-                <a href="{{ route('tools.savings') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">🏦 Kalkulator Tabungan</a>
-                <a href="{{ route('tools.investment') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">📈 Kalkulator Investasi</a>
-                <a href="{{ route('awareness.index') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-melon-tint text-cool-gray hover:text-terra-cotta font-medium">⚠️ Anti Pinjol & Judol</a>
+                <a href="{{ route('home') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">Beranda</a>
+                <a href="{{ route('modules.index') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">Modul</a>
+                <a href="{{ route('forum.index') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">Forum</a>
+                <a href="{{ route('simulation.index') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">Simulasi Keuangan</a>
+                <a href="{{ route('tools.savings') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">Kalkulator Tabungan</a>
+                <a href="{{ route('tools.investment') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">Kalkulator Investasi</a>
+                <a href="{{ route('awareness.index') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-melon-tint text-cool-gray hover:text-terra-cotta font-medium">Anti Pinjol & Judol</a>
                 @auth
                     <div class="border-t border-gray-100 my-2"></div>
-                    <a href="{{ route('dashboard') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">⚡ Dashboard</a>
-                    <a href="{{ route('certificates.index') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">🏆 Sertifikat Saya</a>
+                    <a href="{{ route('dashboard') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">Dashboard</a>
+                    <a href="{{ route('certificates.index') }}" @click="mobileOpen=false" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-mint-green-glow text-cool-gray hover:text-deep-fern-green font-medium">Sertifikat Saya</a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="flex items-center gap-3 w-full px-3 py-3 rounded-xl hover:bg-red-50 text-red-600 font-medium">🚪 Keluar</button>
+                        <button type="submit" class="flex items-center gap-3 w-full px-3 py-3 rounded-xl hover:bg-red-50 text-red-600 font-medium">Keluar</button>
                     </form>
                 @else
                     <div class="border-t border-gray-100 my-2"></div>
@@ -207,7 +205,7 @@
                         <span class="text-white text-xl font-bold"><span class="text-leafy-green">Cerdas</span>Fin</span>
                     </div>
                     <p class="text-sm leading-relaxed mb-4">Platform edukasi literasi keuangan untuk masyarakat Indonesia. Lindungi dirimu dari pinjol ilegal & judi online.</p>
-                    <div class="badge-green inline-flex">🛡️ Platform Terpercaya</div>
+                    <div class="badge-green inline-flex">Platform Terpercaya</div>
                 </div>
 
                 {{-- Navigasi --}}
@@ -215,7 +213,6 @@
                     <h4 class="text-white font-semibold mb-4 text-sm tracking-wider uppercase">Navigasi</h4>
                     <ul class="space-y-2.5 text-sm">
                         <li><a href="{{ route('home') }}" class="hover:text-white transition-colors">Beranda</a></li>
-                        <li><a href="{{ route('courses.index') }}" class="hover:text-white transition-colors">Semua Kursus</a></li>
                         <li><a href="{{ route('modules.index') }}" class="hover:text-white transition-colors">Modul Belajar</a></li>
                         <li><a href="{{ route('forum.index') }}" class="hover:text-white transition-colors">Forum Diskusi</a></li>
                         <li><a href="{{ route('awareness.index') }}" class="hover:text-white transition-colors">Anti Pinjol & Judol</a></li>
@@ -238,8 +235,8 @@
                 <div>
                     <h4 class="text-white font-semibold mb-4 text-sm tracking-wider uppercase">Informasi</h4>
                     <ul class="space-y-2.5 text-sm">
-                        <li class="flex items-center gap-2"><span>📧</span> info@cerdasfin.id</li>
-                        <li class="flex items-center gap-2"><span>📍</span> Jakarta, Indonesia</li>
+                        <li class="flex items-center gap-2">info@cerdasfin.id</li>
+                        <li class="flex items-center gap-2">Jakarta, Indonesia</li>
                     </ul>
                     <div class="mt-4 p-3 bg-white/5 rounded-xl border border-white/10">
                         <p class="text-xs text-gray-500 mb-1">Data OJK 2025</p>

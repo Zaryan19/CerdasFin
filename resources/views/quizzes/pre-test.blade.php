@@ -5,7 +5,7 @@
 <div class="container-cf py-12 max-w-3xl">
     {{-- Header --}}
     <div class="text-center mb-8">
-        <div class="badge-peach mb-4 inline-flex">📝 Pre-Test Wajib</div>
+        <div class="badge-peach mb-4 inline-flex">Pre-Test Wajib</div>
         <h1 class="text-3xl font-bold text-rich-black mb-2">{{ $quiz->title }}</h1>
         <p class="text-cool-gray">Kerjakan pre-test ini sebelum memulai modul <strong>{{ $module->title }}</strong>.</p>
         <p class="text-sm text-cool-gray mt-1">Tidak perlu khawatir dengan nilai — pre-test untuk mengukur pengetahuan awalmu.</p>

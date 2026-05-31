@@ -28,7 +28,7 @@
 
         <div class="lg:col-span-2 space-y-6">
             <div class="card p-6">
-                <h3 class="font-bold text-rich-black mb-4">📚 Progress Kursus</h3>
+                <h3 class="font-bold text-rich-black mb-4">Progress Kursus</h3>
                 @forelse($user->progressData as $progress)
                 <div class="flex items-center gap-4 p-3 rounded-xl hover:bg-mint-green-glow mb-2">
                     <div class="flex-1">
@@ -36,7 +36,7 @@
                         <div class="progress-bar mt-1"><div class="progress-fill" style="width:{{ $progress->progress_percentage }}%"></div></div>
                     </div>
                     <span class="text-sm font-bold text-deep-fern-green">{{ $progress->progress_percentage }}%</span>
-                    @if($progress->is_completed) <span class="badge-green text-xs">✅</span> @endif
+                    @if($progress->is_completed) <span class="badge-green text-xs">Selesai</span> @endif
                 </div>
                 @empty
                 <p class="text-cool-gray text-sm">Belum mengikuti kursus apapun.</p>
@@ -45,7 +45,7 @@
 
             @if($user->certificates->count())
             <div class="card p-6">
-                <h3 class="font-bold text-rich-black mb-4">🏆 Sertifikat</h3>
+                <h3 class="font-bold text-rich-black mb-4">Sertifikat</h3>
                 @foreach($user->certificates as $cert)
                 <div class="flex items-center justify-between p-3 bg-subtle-ash rounded-xl mb-2">
                     <div>

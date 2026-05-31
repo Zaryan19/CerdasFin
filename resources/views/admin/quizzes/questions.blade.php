@@ -4,7 +4,7 @@
 <div class="container-cf py-10">
     <div class="mb-6">
         <a href="{{ route('admin.modules.index') }}" class="btn-ghost text-sm mb-2 inline-block">← Kembali ke Kelola Modul</a>
-        <h1 class="text-2xl font-bold">📝 Pertanyaan untuk: {{ $quiz->title }}</h1>
+        <h1 class="text-2xl font-bold">Pertanyaan untuk: {{ $quiz->title }}</h1>
         <p class="text-sm text-cool-gray">Total Pertanyaan: {{ $quiz->questions->count() }}</p>
     </div>
 

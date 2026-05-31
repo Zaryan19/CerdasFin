@@ -21,8 +21,8 @@
             {{-- Post Content --}}
             <div class="card p-8">
                 <div class="flex items-start gap-2 mb-4 flex-wrap">
-                    @if($post->is_pinned) <span class="badge-green text-xs">📌 Disematkan</span> @endif
-                    @if($post->is_closed) <span class="badge-gray text-xs">🔒 Ditutup</span> @endif
+                    @if($post->is_pinned) <span class="badge-green text-xs">Disematkan</span> @endif
+                    @if($post->is_closed) <span class="badge-gray text-xs">Ditutup</span> @endif
                 </div>
                 <h1 class="text-2xl font-bold text-rich-black mb-6">{{ $post->title }}</h1>
 
@@ -41,7 +41,7 @@
 
             {{-- Comments --}}
             <div class="card p-8">
-                <h2 class="font-bold text-rich-black mb-6">💬 {{ $post->comments->count() }} Komentar</h2>
+                <h2 class="font-bold text-rich-black mb-6">{{ $post->comments->count() }} Komentar</h2>
 
                 @forelse($post->comments as $comment)
                 <div class="flex gap-4 mb-6 last:mb-0">
@@ -58,7 +58,7 @@
                             <form method="POST" action="{{ route('forum.comment.like', $comment) }}" class="inline">
                                 @csrf
                                 <button type="submit" class="text-xs text-cool-gray hover:text-deep-fern-green transition-colors">
-                                    👍 {{ $comment->likes ?? 0 }}
+                                    Suka ({{ $comment->likes ?? 0 }})
                                 </button>
                             </form>
                         </div>
@@ -66,7 +66,7 @@
                 </div>
                 @empty
                 <div class="text-center py-8 text-cool-gray">
-                    <div class="text-3xl mb-2">💬</div>
+                    <div class="text-3xl mb-2"></div>
                     <p class="text-sm">Belum ada komentar. Jadilah yang pertama!</p>
                 </div>
                 @endforelse
@@ -99,9 +99,9 @@
         {{-- Sidebar --}}
         <div class="space-y-6">
             <div class="card p-6">
-                <h3 class="font-bold text-rich-black mb-4">📂 Tentang Kategori</h3>
+                <h3 class="font-bold text-rich-black mb-4">Tentang Kategori</h3>
                 <div class="flex items-center gap-3 mb-3">
-                    <div class="w-10 h-10 bg-mint-green-glow rounded-xl flex items-center justify-center text-xl">💬</div>
+                    <div class="w-10 h-10 bg-mint-green-glow rounded-xl flex items-center justify-center text-xl"></div>
                     <div>
                         <p class="font-semibold text-rich-black text-sm">{{ $category->name }}</p>
                         <p class="text-xs text-cool-gray">{{ $category->description }}</p>
@@ -111,11 +111,11 @@
             </div>
 
             <div class="card-mint p-6 rounded-2xl">
-                <h3 class="font-bold text-rich-black mb-2">💡 Tips Diskusi</h3>
+                <h3 class="font-bold text-rich-black mb-2">Tips Diskusi</h3>
                 <ul class="text-sm text-cool-gray space-y-2">
-                    <li>✅ Berikan informasi yang akurat</li>
-                    <li>✅ Hormati pendapat orang lain</li>
-                    <li>❌ Jangan promosi pinjol/judol</li>
+                    <li>Berikan informasi yang akurat</li>
+                    <li>Hormati pendapat orang lain</li>
+                    <li>Jangan promosi pinjol/judol</li>
                 </ul>
             </div>
         </div>

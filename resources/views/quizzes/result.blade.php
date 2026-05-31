@@ -7,12 +7,12 @@
         <div class="bg-white rounded-lg shadow-lg p-8 mb-8 text-center">
             @if($answer->passed)
                 <div class="mb-4">
-                    <span class="text-6xl">🎉</span>
+                    <span class="text-6xl"></span>
                 </div>
                 <h1 class="text-3xl font-bold text-green-600 mb-4">Selamat Anda telah menyelesaikan kursus ini, silahkan download sertifikat Anda ke halaman sertifikat</h1>
             @else
                 <div class="mb-4">
-                    <span class="text-6xl">📚</span>
+                    <span class="text-6xl"></span>
                 </div>
                 <h1 class="text-4xl font-bold text-red-600 mb-4">Coba Lagi</h1>
                 <p class="text-gray-600 mb-4">Nilai Anda di bawah 90%. Silahkan mengulang kembali!</p>
@@ -34,7 +34,7 @@
                         <button type="submit" class="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold">Coba Lagi</button>
                     </form>
                 @else
-                    <a href="{{ route('certificates.index') }}" class="block p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold">Lihat Sertifikat 🎓</a>
+                    <a href="{{ route('certificates.index') }}" class="block p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold">Lihat Sertifikat</a>
                 @endif
             </div>
         </div>

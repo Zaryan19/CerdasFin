@@ -4,7 +4,7 @@
 @section('content')
 <div class="container-cf py-12 max-w-3xl">
     <div class="text-center mb-8">
-        <div class="badge-green mb-4 inline-flex">🎯 Post-Test Akhir</div>
+        <div class="badge-green mb-4 inline-flex">Post-Test Akhir</div>
         <h1 class="text-3xl font-bold text-rich-black mb-2">{{ $quiz->title }}</h1>
         <p class="text-cool-gray">Tunjukkan seberapa banyak yang telah kamu pelajari dari modul <strong>{{ $module->title }}</strong>.</p>
         <p class="text-sm text-cool-gray mt-1">Nilai minimal lulus: <strong class="text-deep-fern-green">{{ $quiz->passing_score ?? 70 }}%</strong></p>
@@ -37,7 +37,7 @@
         <div class="mt-8 flex items-center justify-between">
             <a href="{{ route('modules.show', $module) }}" class="btn-ghost">← Kembali ke Modul</a>
             <button type="submit" :disabled="answered < total" class="btn-primary" :class="answered < total ? 'opacity-50 cursor-not-allowed' : ''">
-                ✅ Kumpulkan Jawaban
+                Kumpulkan Jawaban
             </button>
         </div>
         <p class="text-center text-sm text-cool-gray mt-3"><span x-text="answered"></span> / {{ $quiz->questions->count() }} soal dijawab</p>

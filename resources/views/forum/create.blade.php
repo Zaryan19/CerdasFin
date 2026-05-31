@@ -30,7 +30,7 @@
                     Kamu akan mendapatkan +5 poin untuk setiap topik yang dibuat!
                 </div>
                 <div class="flex items-center gap-3">
-                    <button type="submit" class="btn-primary">🚀 Posting Topik</button>
+                    <button type="submit" class="btn-primary">Posting Topik</button>
                     <a href="{{ route('forum.category', $category) }}" class="btn-ghost">Batal</a>
                 </div>
             </div>

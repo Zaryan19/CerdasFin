@@ -11,9 +11,16 @@
                     @if($course->thumbnail)
                         <img src="{{ $course->thumbnail }}" alt="{{ $course->title }}" class="w-full h-80 object-cover">
                     @else
-                        <div class="w-full h-80 bg-mint-green-glow flex items-center justify-center">
-                            <svg class="w-20 h-20 text-deep-fern-green opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        </div>
+                        @php
+                            $courseImage = match ($course->slug) {
+                                'pengantar-literasi-keuangan' => 'images/pengantar.jpg',
+                                'mengenali-pinjol-ilegal', 'mengenali-menghindari-pinjol-ilegal' => 'images/pinjol.jpg',
+                                'memahami-bahaya-judi-online', 'memahami-menghindari-judi-online' => 'images/judol.jpg',
+                                'investasi-aman-pemula', 'investasi-aman-untuk-pemula' => 'images/investasi.jpg',
+                                default => 'images/default.jpg',
+                            };
+                        @endphp
+                        <img src="{{ asset($courseImage) }}" alt="{{ $course->title }}" class="w-full h-80 object-cover">
                     @endif
                     <div class="p-8">
                         <p class="text-deep-fern-green font-semibold mb-2 flex items-center gap-2">
@@ -59,7 +66,7 @@
                                             <div>
                                                 <h3 class="font-semibold text-rich-black">{{ $lesson->title }}</h3>
                                                 @if($lesson->duration_minutes)
-                                                    <p class="text-sm text-cool-gray">⏱️ {{ $lesson->duration_minutes }} menit</p>
+                                                    <p class="text-sm text-cool-gray">{{ $lesson->duration_minutes }} menit</p>
                                                 @endif
                                             </div>
                                         </div>

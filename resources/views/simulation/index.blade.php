@@ -4,7 +4,7 @@
 @section('content')
 <div class="container-cf py-12">
     <div class="mb-10 text-center">
-        <div class="badge-green mb-3">🔢 Interaktif</div>
+        <div class="badge-green mb-3">Interaktif</div>
         <h1 class="text-4xl font-bold text-rich-black mb-2">Simulasi Keuangan</h1>
         <p class="text-cool-gray text-lg max-w-xl mx-auto">Coba simulasi bunga pinjol, investasi aman, dan anggaran bulanan secara real-time</p>
     </div>
@@ -12,16 +12,16 @@
     {{-- Tabs --}}
     <div x-data="{ tab: 'pinjol' }">
         <div class="flex gap-2 bg-subtle-ash p-1 rounded-xl max-w-lg mx-auto mb-10">
-            <button @click="tab='pinjol'" :class="tab==='pinjol' ? 'bg-canvas-white shadow text-rich-black' : 'text-cool-gray'" class="flex-1 py-2 rounded-lg text-sm font-medium transition-all">🚫 Pinjol Ilegal</button>
-            <button @click="tab='investasi'" :class="tab==='investasi' ? 'bg-canvas-white shadow text-rich-black' : 'text-cool-gray'" class="flex-1 py-2 rounded-lg text-sm font-medium transition-all">📈 Investasi</button>
-            <button @click="tab='anggaran'" :class="tab==='anggaran' ? 'bg-canvas-white shadow text-rich-black' : 'text-cool-gray'" class="flex-1 py-2 rounded-lg text-sm font-medium transition-all">💰 Anggaran</button>
+            <button @click="tab='pinjol'" :class="tab==='pinjol' ? 'bg-canvas-white shadow text-rich-black' : 'text-cool-gray'" class="flex-1 py-2 rounded-lg text-sm font-medium transition-all">Pinjol Ilegal</button>
+            <button @click="tab='investasi'" :class="tab==='investasi' ? 'bg-canvas-white shadow text-rich-black' : 'text-cool-gray'" class="flex-1 py-2 rounded-lg text-sm font-medium transition-all">Investasi</button>
+            <button @click="tab='anggaran'" :class="tab==='anggaran' ? 'bg-canvas-white shadow text-rich-black' : 'text-cool-gray'" class="flex-1 py-2 rounded-lg text-sm font-medium transition-all">Anggaran</button>
         </div>
 
         {{-- Tab: Pinjol --}}
         <div x-show="tab==='pinjol'" x-data="pinjolSim()">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="card p-8">
-                    <h2 class="font-bold text-rich-black text-xl mb-6">🚫 Simulasi Bunga Pinjol Ilegal</h2>
+                    <h2 class="font-bold text-rich-black text-xl mb-6">Simulasi Bunga Pinjol Ilegal</h2>
                     <div class="space-y-5">
                         <div>
                             <label class="form-label">Jumlah Pinjaman</label>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div x-show="result" class="card p-8">
-                    <h2 class="font-bold text-rich-black text-xl mb-4">📊 Hasil Simulasi</h2>
+                    <h2 class="font-bold text-rich-black text-xl mb-4">Hasil Simulasi</h2>
                     <div class="space-y-3">
                         <div class="flex justify-between p-3 bg-subtle-ash rounded-xl"><span class="text-sm text-cool-gray">Pinjaman Awal</span><span class="font-bold text-rich-black">Rp <span x-text="fmt(result?.principal)"></span></span></div>
                         <div class="flex justify-between p-3 bg-subtle-ash rounded-xl"><span class="text-sm text-cool-gray">Total Bunga</span><span class="font-bold text-red-600">Rp <span x-text="fmt(result?.total_interest)"></span></span></div>
@@ -58,7 +58,7 @@
         <div x-show="tab==='investasi'" x-data="investasiSim()">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="card p-8">
-                    <h2 class="font-bold text-rich-black text-xl mb-6">📈 Simulasi Investasi Aman</h2>
+                    <h2 class="font-bold text-rich-black text-xl mb-6">Simulasi Investasi Aman</h2>
                     <div class="space-y-5">
                         <div>
                             <label class="form-label">Modal Awal</label>
@@ -80,11 +80,11 @@
                     </div>
                 </div>
                 <div x-show="result" class="card p-8">
-                    <h2 class="font-bold text-rich-black text-xl mb-4">📊 Proyeksi Investasi</h2>
+                    <h2 class="font-bold text-rich-black text-xl mb-4">Proyeksi Investasi</h2>
                     <div class="space-y-3 mb-4">
                         <div class="flex justify-between p-3 bg-subtle-ash rounded-xl"><span class="text-sm text-cool-gray">Total Modal Disetor</span><span class="font-bold">Rp <span x-text="fmt(result?.total_contributions)"></span></span></div>
                         <div class="flex justify-between p-3 bg-subtle-ash rounded-xl"><span class="text-sm text-cool-gray">Total Keuntungan</span><span class="font-bold text-deep-fern-green">Rp <span x-text="fmt(result?.total_gain)"></span></span></div>
-                        <div class="flex justify-between p-4 bg-mint-green-glow border border-leafy-green rounded-xl"><span class="font-semibold text-deep-fern-green">Nilai Akhir! 🎉</span><span class="text-xl font-bold text-deep-fern-green">Rp <span x-text="fmt(result?.final_balance)"></span></span></div>
+                        <div class="flex justify-between p-4 bg-mint-green-glow border border-leafy-green rounded-xl"><span class="font-semibold text-deep-fern-green">Nilai Akhir!</span><span class="text-xl font-bold text-deep-fern-green">Rp <span x-text="fmt(result?.final_balance)"></span></span></div>
                     </div>
                     <div class="chart-container"><canvas id="investChart"></canvas></div>
                 </div>
@@ -95,7 +95,7 @@
         <div x-show="tab==='anggaran'" x-data="anggaranSim()">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="card p-8">
-                    <h2 class="font-bold text-rich-black text-xl mb-2">💰 Simulasi Anggaran Bulanan</h2>
+                    <h2 class="font-bold text-rich-black text-xl mb-2">Simulasi Anggaran Bulanan</h2>
                     <p class="text-sm text-cool-gray mb-6">Metode 50/30/20: Kebutuhan, Keinginan, Tabungan</p>
                     <div>
                         <label class="form-label">Penghasilan Bulanan (Rp)</label>
@@ -103,9 +103,9 @@
                     </div>
                     <button @click="calculate()" class="btn-primary w-full justify-center mt-6">Hitung Anggaran</button>
                     <div x-show="result" class="mt-6 space-y-3">
-                        <div class="flex justify-between p-3 bg-mint-green-glow rounded-xl"><span class="text-sm font-medium text-rich-black">🏠 Kebutuhan (50%)</span><span class="font-bold text-deep-fern-green">Rp <span x-text="fmt(result?.needs)"></span></span></div>
-                        <div class="flex justify-between p-3 bg-melon-tint rounded-xl"><span class="text-sm font-medium text-rich-black">🎮 Keinginan (30%)</span><span class="font-bold text-terra-cotta">Rp <span x-text="fmt(result?.wants)"></span></span></div>
-                        <div class="flex justify-between p-3 bg-sky-mist rounded-xl"><span class="text-sm font-medium text-rich-black">💎 Tabungan (20%)</span><span class="font-bold text-blue-700">Rp <span x-text="fmt(result?.savings)"></span></span></div>
+                        <div class="flex justify-between p-3 bg-mint-green-glow rounded-xl"><span class="text-sm font-medium text-rich-black">Kebutuhan (50%)</span><span class="font-bold text-deep-fern-green">Rp <span x-text="fmt(result?.needs)"></span></span></div>
+                        <div class="flex justify-between p-3 bg-melon-tint rounded-xl"><span class="text-sm font-medium text-rich-black">Keinginan (30%)</span><span class="font-bold text-terra-cotta">Rp <span x-text="fmt(result?.wants)"></span></span></div>
+                        <div class="flex justify-between p-3 bg-sky-mist rounded-xl"><span class="text-sm font-medium text-rich-black">Tabungan (20%)</span><span class="font-bold text-blue-700">Rp <span x-text="fmt(result?.savings)"></span></span></div>
                     </div>
                 </div>
                 <div x-show="result" class="card p-8">

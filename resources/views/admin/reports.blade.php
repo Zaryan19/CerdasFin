@@ -5,7 +5,7 @@
 <div class="container-cf py-10">
     <div class="flex items-center gap-4 mb-8">
         <a href="{{ route('admin.dashboard') }}" class="btn-ghost text-sm">← Admin Panel</a>
-        <h1 class="text-2xl font-bold text-rich-black">📊 Laporan Dampak Edukasi</h1>
+        <h1 class="text-2xl font-bold text-rich-black">Laporan Dampak Edukasi</h1>
     </div>
 
     <div class="card-mint p-8 rounded-2xl mb-8 text-center">
@@ -15,24 +15,24 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <div class="stat-card">
-            <div class="text-2xl mb-1">👥</div>
+            <div class="text-2xl mb-1"></div>
             <div class="stat-number">{{ \App\Models\User::count() }}</div>
             <div class="stat-label">Total Pengguna Terdaftar</div>
         </div>
         <div class="stat-card">
-            <div class="text-2xl mb-1">📚</div>
+            <div class="text-2xl mb-1"></div>
             <div class="stat-number text-deep-fern-green">{{ \App\Models\UserProgress::where('is_completed', true)->count() }}</div>
             <div class="stat-label">Total Penyelesaian Kursus</div>
         </div>
         <div class="stat-card">
-            <div class="text-2xl mb-1">🏆</div>
+            <div class="text-2xl mb-1"></div>
             <div class="stat-number text-terra-cotta">{{ \App\Models\Certificate::count() }}</div>
             <div class="stat-label">Sertifikat Diterbitkan</div>
         </div>
     </div>
 
     <div class="card p-8">
-        <h2 class="font-bold text-rich-black mb-4">📈 Dampak Peningkatan Literasi Keuangan</h2>
+        <h2 class="font-bold text-rich-black mb-4">Dampak Peningkatan Literasi Keuangan</h2>
         @php
             $scoreData = \App\Models\UserProgress::whereNotNull('score_pre_test')
                 ->whereNotNull('score_post_test')

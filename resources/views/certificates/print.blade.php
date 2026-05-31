@@ -158,7 +158,7 @@ body {
     <div class="inner-border"></div>
 
     <!-- Logo -->
-    <div class="logo">🌱 CerdasFin</div>
+    <div class="logo">CerdasFin</div>
     <div class="logo-sub">Platform Literasi Keuangan Indonesia</div>
     <hr class="divider">
 

@@ -4,7 +4,7 @@
 @section('content')
 <div class="container-cf py-12">
     <div class="mb-10">
-        <div class="badge-green mb-3">📚 Kurikulum</div>
+        <div class="badge-green mb-3">Kurikulum</div>
         <h1 class="text-4xl font-bold text-rich-black mb-2">Modul Pembelajaran</h1>
         <p class="text-cool-gray text-lg">4 modul utama dirancang khusus untuk meningkatkan literasi keuangan masyarakat Indonesia</p>
     </div>
@@ -12,9 +12,23 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         @forelse($modules as $module)
         <div class="card overflow-hidden group hover:shadow-lg transition-shadow">
-            <div class="h-32 bg-mint-green-glow flex items-center justify-between px-8">
-                <div class="text-6xl">{{ $module->icon ?? '📚' }}</div>
-                <div class="badge-green">{{ $module->courses_count }} Kursus</div>
+            <div class="h-48 overflow-hidden relative">
+                @php
+                    $moduleImage = match ($module->slug) {
+                        'dasar-literasi-keuangan' => 'images/fondasi.jpg',
+                        'bahaya-pinjol-ilegal' => 'images/waspada.jpg',
+                        'bahaya-judi-online' => 'images/lindungi.jpg',
+                        'pengelolaan-keuangan-sehat' => 'images/sejahtera.jpg',
+                        default => 'images/fondasi.jpg',
+                    };
+                @endphp
+                <img src="{{ asset($moduleImage) }}" alt="{{ $module->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl px-3 py-1.5 shadow-sm text-3xl flex items-center justify-center">
+                    {{ $module->icon ?? '' }}
+                </div>
+                <div class="absolute top-4 right-4 badge-green">
+                    {{ $module->courses_count }} Kursus
+                </div>
             </div>
             <div class="p-8">
                 <h2 class="text-2xl font-bold text-rich-black mb-2">{{ $module->title }}</h2>
@@ -27,7 +41,7 @@
         </div>
         @empty
         <div class="col-span-2 text-center py-16 card">
-            <div class="text-5xl mb-4">📚</div>
+            <div class="text-5xl mb-4"></div>
             <p class="text-cool-gray">Belum ada modul yang tersedia.</p>
         </div>
         @endforelse

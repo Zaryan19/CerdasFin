@@ -5,7 +5,7 @@
     <div class="flex items-center justify-between mb-8">
         <div>
             <a href="{{ route('admin.modules.index') }}" class="btn-ghost text-sm mb-2 inline-block">← Kembali ke Modul</a>
-            <h1 class="text-2xl font-bold">📝 Kelola Soal: {{ $module->title }}</h1>
+            <h1 class="text-2xl font-bold">Kelola Soal: {{ $module->title }}</h1>
         </div>
     </div>
 

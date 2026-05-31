@@ -15,7 +15,7 @@
 
       <div class="flex items-center justify-between">
         <span class="text-xs font-bold uppercase tracking-[0.2em] text-deep-fern-green">01 — Tentang CerdasFin</span>
-        <div class="badge-green">🌱 Platform Terpercaya</div>
+        <div class="badge-green">Platform Terpercaya</div>
       </div>
 
       <hr class="border-none border-t border-black/10" style="border-top:1px solid rgba(11,116,67,0.2);">
@@ -85,26 +85,36 @@
       </p>
 
       <hr style="border-top:1px solid rgba(255,255,255,0.25);">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          @php $modulesData = [
+            ['', 'Fondasi', 'Dasar Literasi Keuangan', 'Anggaran 50/30/20, menabung, fondasi finansial kuat.'],
+            ['', 'Waspada', 'Bahaya Pinjol Ilegal', 'Kenali ciri pinjol ilegal & dampak bunga majemuk mencekik.'],
+            ['', 'Lindungi', 'Bahaya Judi Online', 'Matematika kekalahan judol & strategi keluar kecanduan.'],
+            ['', 'Sejahtera', 'Pengelolaan Keuangan Sehat', 'Investasi emas, deposito, dana darurat, reksa dana.'],
+    ]; @endphp
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        @php $modulesData = [
-          ['💰','Fondasi','Dasar Literasi Keuangan','Anggaran 50/30/20, menabung, fondasi finansial kuat.','dasar-literasi-keuangan'],
-          ['🚫','Waspada','Bahaya Pinjol Ilegal','Kenali ciri pinjol ilegal & dampak bunga majemuk mencekik.','bahaya-pinjol-ilegal'],
-          ['🎰','Lindungi','Bahaya Judi Online','Matematika kekalahan judol & strategi keluar kecanduan.','bahaya-judi-online'],
-          ['📈','Sejahtera','Pengelolaan Keuangan Sehat','Investasi emas, deposito, dana darurat, reksa dana.','pengelolaan-keuangan-sehat'],
-        ]; @endphp
-        @foreach($modulesData as [$icon, $tag, $title, $desc, $slug])
-        <a href="{{ route('modules.index') }}" class="group flex items-start gap-4 bg-white/10 hover:bg-white/20 rounded-2xl p-5 transition-all border border-white/20">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0" style="background:rgba(255,255,255,0.15);">{{ $icon }}</div>
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-green-200">{{ $tag }}</span>
-            <p class="font-bold text-white mt-0.5">{{ $title }}</p>
-            <p class="text-sm text-green-100 mt-1">{{ $desc }}</p>
-          </div>
-          <svg class="w-5 h-5 text-green-200 ml-auto mt-1 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        </a>
-        @endforeach
+    @foreach($modulesData as [$icon, $tag, $title, $desc])
+    <a href="{{ route('modules.index') }}" class="group flex items-start gap-4 bg-white/10 hover:bg-white/20 rounded-2xl p-5 transition-all border border-white/20">
+      <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden" style="background:rgba(255,255,255,0.15);">
+        @if($loop->index == 0)
+          <img src="{{ asset('images/fondasi.jpg') }}" alt="{{ $title }}" class="w-full h-full object-cover">
+        @elseif($loop->index == 1)
+          <img src="{{ asset('images/waspada.jpg') }}" alt="{{ $title }}" class="w-full h-full object-cover">
+        @elseif($loop->index == 2)
+          <img src="{{ asset('images/lindungi.jpg') }}" alt="{{ $title }}" class="w-full h-full object-cover">
+        @else
+          <img src="{{ asset('images/sejahtera.jpg') }}" alt="{{ $title }}" class="w-full h-full object-cover">
+        @endif
       </div>
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-green-200">{{ $tag }}</span>
+        <p class="font-bold text-white mt-0.5">{{ $title }}</p>
+        <p class="text-sm text-green-100 mt-1">{{ $desc }}</p>
+      </div>
+      <svg class="w-5 h-5 text-green-200 ml-auto mt-1 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </a>
+    @endforeach
+  </div>
 
       <div class="flex justify-center mt-4">
         <a href="{{ route('modules.index') }}" class="btn-secondary" style="background:white;color:#0b7443;border-color:white;">Lihat Semua Modul →</a>
@@ -139,12 +149,12 @@
 
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         @php $features = [
-          ['📊','Pre-test & Post-test','Ukur peningkatan pengetahuan secara akurat sebelum & sesudah belajar.'],
-          ['🎮','Gamifikasi & Badge','Kumpulkan poin, raih badge, pertahankan streak belajar harian.'],
-          ['🧮','Simulasi Keuangan','Coba simulasi bunga pinjol, tabungan, dan investasi real-time.'],
-          ['🏆','Sertifikat Digital','Dapatkan sertifikat otomatis setelah menyelesaikan modul.'],
-          ['💬','Forum Komunitas','Diskusi, berbagi tips, dan belajar dari mentor berpengalaman.'],
-          ['🛡️','Anti Pinjol & Judol','Edukasi interaktif untuk mengenali & menghindari jebakan finansial.'],
+          ['','Pre-test & Post-test','Ukur peningkatan pengetahuan secara akurat sebelum & sesudah belajar.'],
+          ['','Gamifikasi & Badge','Kumpulkan poin, raih badge, pertahankan streak belajar harian.'],
+          ['','Simulasi Keuangan','Coba simulasi bunga pinjol, tabungan, dan investasi real-time.'],
+          ['','Sertifikat Digital','Dapatkan sertifikat otomatis setelah menyelesaikan modul.'],
+          ['','Forum Komunitas','Diskusi, berbagi tips, dan belajar dari mentor berpengalaman.'],
+          ['','Anti Pinjol & Judol','Edukasi interaktif untuk mengenali & menghindari jebakan finansial.'],
         ]; @endphp
         @foreach($features as [$icon, $title, $desc])
         <div class="bg-white rounded-2xl p-5 border border-black/5 hover:shadow-md transition-shadow">
@@ -233,10 +243,10 @@
       <div class="flex flex-wrap gap-4 items-center">
         @auth
           <a href="{{ route('dashboard') }}" class="btn-primary" style="background:white;color:#0b7443;font-size:1rem;padding:16px 32px;font-weight:700;">Ke Dashboard Saya →</a>
-          <a href="{{ route('modules.index') }}" class="btn-secondary" style="border-color:rgba(255,255,255,0.5);color:white;font-size:1rem;padding:16px 32px;">Lihat Modul</a>
+          <a href="{{ route('modules.index') }}" class="btn-secondary" style="border-color:rgba(255,255,255,0.5);color:#0b7443;font-size:1rem;padding:16px 32px;">Lihat Modul</a>
         @else
-          <a href="{{ route('register') }}" class="btn-primary" style="background:white;color:#0b7443;font-size:1rem;padding:16px 32px;font-weight:700;">🌱 Daftar Gratis Sekarang</a>
-          <a href="{{ route('login') }}" class="btn-secondary" style="border-color:rgba(255,255,255,0.5);color:white;font-size:1rem;padding:16px 32px;">Sudah Punya Akun? Masuk</a>
+          <a href="{{ route('register') }}" class="btn-primary" style="background:white;color:#0b7443;font-size:1rem;padding:16px 32px;font-weight:700;">Daftar Gratis Sekarang</a>
+          <a href="{{ route('login') }}" class="btn-secondary" style="border-color:rgba(255,255,255,0.5);color:#0b7443;font-size:1rem;padding:16px 32px;">Sudah Punya Akun? Masuk</a>
         @endauth
       </div>
 

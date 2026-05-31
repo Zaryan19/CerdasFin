@@ -7,7 +7,7 @@
     {{-- Header --}}
     <div class="flex items-center justify-between mb-8">
         <div>
-            <h1 class="text-3xl font-bold text-rich-black">⚙️ Admin Panel</h1>
+            <h1 class="text-3xl font-bold text-rich-black">Admin Panel</h1>
             <p class="text-cool-gray">Kelola platform CerdasFin</p>
         </div>
         <div class="badge-peach">{{ Auth::user()->name }} — Admin</div>
@@ -15,18 +15,18 @@
 
     {{-- Stat Cards --}}
     <div class="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
-        <div class="stat-card"><div class="text-2xl mb-1">👥</div><div class="stat-number">{{ $stats['total_users'] }}</div><div class="stat-label">Total User</div></div>
-        <div class="stat-card"><div class="text-2xl mb-1">📊</div><div class="stat-number text-deep-fern-green">{{ $stats['active_users'] }}</div><div class="stat-label">User Aktif</div></div>
-        <div class="stat-card"><div class="text-2xl mb-1">✅</div><div class="stat-number">{{ $stats['total_completions'] }}</div><div class="stat-label">Penyelesaian</div></div>
-        <div class="stat-card"><div class="text-2xl mb-1">🏆</div><div class="stat-number text-terra-cotta">{{ $stats['certificates'] }}</div><div class="stat-label">Sertifikat</div></div>
-        <div class="stat-card"><div class="text-2xl mb-1">💬</div><div class="stat-number">{{ $stats['forum_posts'] }}</div><div class="stat-label">Post Forum</div></div>
+        <div class="stat-card"><div class="text-2xl mb-1"></div><div class="stat-number">{{ $stats['total_users'] }}</div><div class="stat-label">Total User</div></div>
+        <div class="stat-card"><div class="text-2xl mb-1"></div><div class="stat-number text-deep-fern-green">{{ $stats['active_users'] }}</div><div class="stat-label">User Aktif</div></div>
+        <div class="stat-card"><div class="text-2xl mb-1"></div><div class="stat-number">{{ $stats['total_completions'] }}</div><div class="stat-label">Penyelesaian</div></div>
+        <div class="stat-card"><div class="text-2xl mb-1"></div><div class="stat-number text-terra-cotta">{{ $stats['certificates'] }}</div><div class="stat-label">Sertifikat</div></div>
+        <div class="stat-card"><div class="text-2xl mb-1"></div><div class="stat-number">{{ $stats['forum_posts'] }}</div><div class="stat-label">Post Forum</div></div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         {{-- Score Impact Chart --}}
         <div class="lg:col-span-2 card p-6">
-            <h2 class="font-bold text-rich-black mb-4">📈 Dampak Edukasi: Rata-rata Pre-test vs Post-test</h2>
+            <h2 class="font-bold text-rich-black mb-4">Dampak Edukasi: Rata-rata Pre-test vs Post-test</h2>
             @if($scoreData && $scoreData->avg_pre)
             <div class="grid grid-cols-2 gap-4 mb-6">
                 <div class="p-4 bg-melon-tint rounded-xl text-center">
@@ -45,7 +45,7 @@
             </div>
             @else
             <div class="text-center py-8 text-cool-gray">
-                <div class="text-4xl mb-2">📊</div>
+                <div class="text-2xl mb-1"></div>
                 <p>Data pre/post test belum tersedia</p>
             </div>
             @endif
@@ -53,7 +53,7 @@
 
         {{-- Quick Links --}}
         <div class="card p-6">
-            <h2 class="font-bold text-rich-black mb-4">⚡ Manajemen Cepat</h2>
+            <h2 class="font-bold text-rich-black mb-4">Manajemen Cepat</h2>
             <div class="space-y-2">
                 <a href="{{ route('admin.users.index') }}" class="sidebar-link w-full">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
@@ -82,7 +82,7 @@
     {{-- Recent Users --}}
     <div class="card mt-6">
         <div class="p-6 border-b border-gray-100 flex items-center justify-between">
-            <h2 class="font-bold text-rich-black">👥 User Terbaru</h2>
+            <h2 class="font-bold text-rich-black">User Terbaru</h2>
             <a href="{{ route('admin.users.index') }}" class="text-sm text-deep-fern-green font-medium hover:underline">Lihat Semua</a>
         </div>
         <table class="table-cf">

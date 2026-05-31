@@ -12,7 +12,7 @@
 
     {{-- Header --}}
     <div class="card-mint p-10 rounded-3xl mb-10">
-        <div class="text-6xl mb-4">{{ $module->icon ?? '📚' }}</div>
+        <div class="text-6xl mb-4">{{ $module->icon ?? '' }}</div>
         <h1 class="text-4xl font-bold text-rich-black mb-3">{{ $module->title }}</h1>
         <p class="text-cool-gray text-lg max-w-2xl">{{ $module->description }}</p>
     </div>

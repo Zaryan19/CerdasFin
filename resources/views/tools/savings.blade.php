@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-cf py-12 max-w-2xl">
     <div class="mb-8">
-        <div class="badge-green mb-3">🏦 Alat Finansial</div>
+        <div class="badge-green mb-3">Alat Finansial</div>
         <h1 class="text-3xl font-bold text-rich-black">Kalkulator Tabungan</h1>
         <p class="text-cool-gray mt-1">Hitung proyeksi tabunganmu dengan bunga majemuk</p>
     </div>
@@ -32,7 +32,7 @@
         <div x-show="result" class="mt-6 space-y-3">
             <div class="flex justify-between p-3 bg-subtle-ash rounded-xl"><span class="text-sm text-cool-gray">Total Setor</span><span class="font-bold">Rp <span x-text="fmt(result?.deposited)"></span></span></div>
             <div class="flex justify-between p-3 bg-subtle-ash rounded-xl"><span class="text-sm text-cool-gray">Total Bunga</span><span class="font-bold text-deep-fern-green">Rp <span x-text="fmt(result?.interest)"></span></span></div>
-            <div class="flex justify-between p-4 bg-mint-green-glow border border-leafy-green rounded-xl"><span class="font-semibold text-deep-fern-green">Total Tabungan 🎉</span><span class="text-xl font-bold text-deep-fern-green">Rp <span x-text="fmt(result?.total)"></span></span></div>
+            <div class="flex justify-between p-4 bg-mint-green-glow border border-leafy-green rounded-xl"><span class="font-semibold text-deep-fern-green">Total Tabungan</span><span class="text-xl font-bold text-deep-fern-green">Rp <span x-text="fmt(result?.total)"></span></span></div>
         </div>
     </div>
     <div class="mt-4 text-center">

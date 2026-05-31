@@ -5,7 +5,7 @@
     <div class="flex items-center justify-between mb-8">
         <div>
             <a href="{{ route('admin.dashboard') }}" class="btn-ghost text-sm mb-2 inline-block">← Admin Panel</a>
-            <h1 class="text-2xl font-bold">📚 Kelola Kursus & Video</h1>
+            <h1 class="text-2xl font-bold">Kelola Kursus & Video</h1>
         </div>
         <a href="{{ route('admin.courses.create') }}" class="btn-primary">+ Tambah Kursus</a>
     </div>

@@ -5,7 +5,7 @@
 <div class="container-cf py-10 max-w-3xl">
     <div class="flex items-center gap-4 mb-8">
         <a href="{{ route('admin.modules.index') }}" class="btn-ghost text-sm">← Kembali</a>
-        <h1 class="text-2xl font-bold text-rich-black">➕ Tambah Modul Baru</h1>
+        <h1 class="text-2xl font-bold text-rich-black">Tambah Modul Baru</h1>
     </div>
 
     <div class="card p-8">
@@ -23,8 +23,8 @@
                 {{-- Icon & Order --}}
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="form-label">Ikon (Emoji)</label>
-                        <input type="text" name="icon" value="{{ old('icon', '📚') }}" class="form-input" maxlength="4" placeholder="📚">
+                        <label class="form-label">Ikon</label>
+                        <input type="text" name="icon" value="{{ old('icon', '') }}" class="form-input" maxlength="4" placeholder="">
                     </div>
                     <div>
                         <label class="form-label">Urutan</label>
@@ -57,13 +57,13 @@
                 <div>
                     <label class="form-label">Status Publikasi <span class="text-red-500">*</span></label>
                     <select name="status" class="form-input" required>
-                        <option value="draft"     {{ old('status') === 'draft'     ? 'selected' : '' }}>📝 Draft (tidak tampil di publik)</option>
-                        <option value="published" {{ old('status') === 'published' ? 'selected' : '' }}>✅ Published (tampil di publik)</option>
+                        <option value="draft"     {{ old('status') === 'draft'     ? 'selected' : '' }}>Draft (tidak tampil di publik)</option>
+                        <option value="published" {{ old('status') === 'published' ? 'selected' : '' }}>Published (tampil di publik)</option>
                     </select>
                 </div>
 
                 <div class="flex items-center gap-3 pt-2">
-                    <button type="submit" class="btn-primary">💾 Simpan Modul</button>
+                    <button type="submit" class="btn-primary">Simpan Modul</button>
                     <a href="{{ route('admin.modules.index') }}" class="btn-ghost">Batal</a>
                 </div>
             </div>

@@ -103,16 +103,20 @@ class QuizController extends Controller
         ]);
 
         // Save score_pre_test to user_progress (module-level)
+        $course = Course::find($quiz->course_id);
+        $totalLessons = $course ? $course->lessons()->count() : 0;
+
         UserProgress::updateOrCreate(
             ['user_id' => auth()->id(), 'module_id' => $module->id],
             [
                 'course_id'     => $quiz->course_id,
                 'score_pre_test' => $result['score'],
-                'module_status' => 'in_progress',
+                'module_status' => 'LEARNING',
+                'total_lessons' => $totalLessons,
             ]
         );
 
-        return redirect()->route('modules.show', $module)
+        return redirect()->route('courses.show', $course)
             ->with('success', "✅ Pre-test selesai! Skor kamu: {$result['score']}/100. Selamat belajar!");
     }
 
@@ -149,7 +153,10 @@ class QuizController extends Controller
         ]);
 
         // Save score_post_test to user_progress + update module_status
-        $moduleStatus = $result['passed'] ? 'completed' : 'in_progress';
+        $moduleStatus = $result['passed'] ? 'COMPLETED' : 'LEARNING';
+
+        $course = Course::find($quiz->course_id);
+        $totalLessons = $course ? $course->lessons()->count() : 0;
 
         UserProgress::updateOrCreate(
             ['user_id' => auth()->id(), 'module_id' => $module->id],
@@ -159,6 +166,7 @@ class QuizController extends Controller
                 'module_status'   => $moduleStatus,
                 'is_completed'    => $result['passed'],
                 'completed_at'    => $result['passed'] ? now() : null,
+                'total_lessons'   => $totalLessons,
             ]
         );
 

@@ -5,7 +5,7 @@
 <div class="container-cf py-10">
     <div class="flex items-center gap-4 mb-6">
         <a href="{{ route('admin.dashboard') }}" class="btn-ghost text-sm">← Admin Panel</a>
-        <h1 class="text-2xl font-bold text-rich-black">👥 Kelola User</h1>
+        <h1 class="text-2xl font-bold text-rich-black">Kelola User</h1>
         <div class="ml-auto badge-gray">{{ $users->total() }} user</div>
     </div>
 

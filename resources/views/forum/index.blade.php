@@ -5,7 +5,7 @@
 <div class="container-cf py-10">
 
     <div class="mb-8">
-        <h1 class="text-3xl font-bold text-rich-black">💬 Forum Diskusi</h1>
+        <h1 class="text-3xl font-bold text-rich-black">Forum Diskusi</h1>
         <p class="text-cool-gray mt-1">Pilih ruang diskusi untuk bergabung dan berdiskusi</p>
     </div>
 
@@ -18,7 +18,7 @@
             <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0"
                  style="background: linear-gradient(135deg, #d1fadf, #e1fdea);">
                 @php
-                    $icons = ['💰','🚫','🎰','📈','💬','❓'];
+                    $icons = ['','','','','',''];
                     echo $icons[($loop->index) % count($icons)];
                 @endphp
             </div>
@@ -30,7 +30,7 @@
                 <p class="text-sm text-cool-gray mt-0.5 truncate">{{ $category->description }}</p>
                 @if($category->posts->last())
                 <p class="text-xs text-cool-gray mt-1 truncate">
-                    💬 {{ Str::limit($category->posts->last()->content ?? $category->posts->last()->title, 45) }}
+                    {{ Str::limit($category->posts->last()->content ?? $category->posts->last()->title, 45) }}
                 </p>
                 @endif
             </div>
@@ -38,7 +38,7 @@
         </a>
         @empty
         <div class="col-span-2 text-center py-16 card">
-            <div class="text-5xl mb-4">💬</div>
+            <div class="text-5xl mb-4"></div>
             <p class="text-cool-gray">Forum sedang disiapkan. Cek kembali nanti.</p>
         </div>
         @endforelse
@@ -46,11 +46,11 @@
 
     {{-- Community Tips --}}
     <div class="card p-6" style="background: linear-gradient(135deg, #0b7443, #095f38); color:white;">
-        <h3 class="font-bold text-lg mb-3">🌟 Panduan Komunitas CerdasFin</h3>
+        <h3 class="font-bold text-lg mb-3">Panduan Komunitas CerdasFin</h3>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-green-100">
-            <div>✅ <strong class="text-white">Berbagi pengalaman</strong> nyata seputar literasi keuangan</div>
-            <div>🚫 <strong class="text-white">Dilarang promosi</strong> produk keuangan ilegal atau pinjol</div>
-            <div>🤝 <strong class="text-white">Hormati sesama</strong> anggota komunitas</div>
+            <div><strong class="text-white">Berbagi pengalaman</strong> nyata seputar literasi keuangan</div>
+            <div><strong class="text-white">Dilarang promosi</strong> produk keuangan ilegal atau pinjol</div>
+            <div><strong class="text-white">Hormati sesama</strong> anggota komunitas</div>
         </div>
     </div>
 </div>

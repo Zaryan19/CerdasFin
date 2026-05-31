@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-cf py-12 max-w-2xl">
     <div class="mb-8">
-        <div class="badge-peach mb-3">🏠 Alat Finansial</div>
+        <div class="badge-peach mb-3">Alat Finansial</div>
         <h1 class="text-3xl font-bold text-rich-black">Kalkulator Kredit / KPR</h1>
         <p class="text-cool-gray mt-1">Hitung cicilan kredit dengan bunga tetap</p>
     </div>

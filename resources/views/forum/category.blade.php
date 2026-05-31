@@ -61,14 +61,14 @@ footer { display: none !important; }
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         </a>
         {{-- Group Avatar --}}
-        <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-xl flex-shrink-0">💬</div>
+        <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-xl flex-shrink-0"></div>
         <div class="flex-1 min-w-0">
             <p class="font-bold text-white leading-tight">{{ $category->name }}</p>
             <p class="text-xs text-green-200 truncate">{{ $messages->count() }} pesan · {{ $category->description }}</p>
         </div>
         @auth
         <div class="text-xs text-green-200 hidden sm:block">
-            ⭐ {{ auth()->user()->userPoints->total_points ?? 0 }} poin
+            {{ auth()->user()->userPoints->total_points ?? 0 }} poin
         </div>
         @endauth
     </div>
@@ -76,7 +76,7 @@ footer { display: none !important; }
     {{-- Flash Success --}}
     @if(session('success'))
     <div class="mx-4 mt-2">
-        <div class="alert-success text-sm">✅ {{ session('success') }}</div>
+        <div class="alert-success text-sm">{{ session('success') }}</div>
     </div>
     @endif
 
@@ -85,7 +85,7 @@ footer { display: none !important; }
 
         {{-- Date Divider (start) --}}
         <div class="date-divider mb-4">
-            <span>📌 {{ $category->name }}</span>
+            <span>{{ $category->name }}</span>
         </div>
         <div class="date-divider mb-6">
             <span>{{ $messages->first()?->created_at?->format('d M Y') ?? now()->format('d M Y') }}</span>
@@ -159,7 +159,7 @@ footer { display: none !important; }
                     <div class="mt-2 text-right">
                         <button onclick="toggleReply({{ $msg->id }})"
                                 class="text-[10px] text-cool-gray hover:text-deep-fern-green transition-colors">
-                            ↩ Balas
+                            Balas
                         </button>
                     </div>
                     @endauth
@@ -188,7 +188,7 @@ footer { display: none !important; }
 
         @empty
             <div class="date-divider">
-                <span>💬 Belum ada pesan. Jadilah yang pertama!</span>
+                <span>Belum ada pesan. Jadilah yang pertama!</span>
             </div>
         @endforelse
 
