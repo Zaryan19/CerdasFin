@@ -17,10 +17,9 @@
             <button @click="tab='anggaran'" :class="tab==='anggaran' ? 'bg-canvas-white shadow text-rich-black' : 'text-cool-gray'" class="flex-1 py-2 rounded-lg text-sm font-medium transition-all">Anggaran</button>
         </div>
 
-        {{-- Tab: Pinjol --}}
-        <div x-show="tab==='pinjol'" x-data="pinjolSim()">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="card p-8">
+        <div x-show="tab==='pinjol'" x-data="pinjolSim()" class="w-full flex justify-center">
+            <div :class="result ? 'grid grid-cols-1 lg:grid-cols-2 gap-8' : 'flex justify-center'" class="w-full max-w-5xl mx-auto">
+                <div class="card p-8 mx-auto w-full max-w-2xl">
                     <h2 class="font-bold text-rich-black text-xl mb-6">Simulasi Bunga Pinjol Ilegal</h2>
                     <div class="space-y-5">
                         <div>
@@ -42,7 +41,7 @@
                         </button>
                     </div>
                 </div>
-                <div x-show="result" class="card p-8">
+                <div x-show="result" class="card p-8 mx-auto w-full max-w-2xl">
                     <h2 class="font-bold text-rich-black text-xl mb-4">Hasil Simulasi</h2>
                     <div class="space-y-3">
                         <div class="flex justify-between p-3 bg-subtle-ash rounded-xl"><span class="text-sm text-cool-gray">Pinjaman Awal</span><span class="font-bold text-rich-black">Rp <span x-text="fmt(result?.principal)"></span></span></div>
@@ -53,11 +52,10 @@
                 </div>
             </div>
         </div>
-
-        {{-- Tab: Investasi --}}
-        <div x-show="tab==='investasi'" x-data="investasiSim()">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="card p-8">
+ 
+        <div x-show="tab==='investasi'" x-data="investasiSim()" class="w-full flex justify-center">
+            <div :class="result ? 'grid grid-cols-1 lg:grid-cols-2 gap-8' : 'flex justify-center'" class="w-full max-w-5xl mx-auto">
+                <div class="card p-8 mx-auto w-full max-w-2xl">
                     <h2 class="font-bold text-rich-black text-xl mb-6">Simulasi Investasi Aman</h2>
                     <div class="space-y-5">
                         <div>
@@ -79,7 +77,7 @@
                         <button @click="calculate()" class="btn-primary w-full justify-center">Hitung Investasi</button>
                     </div>
                 </div>
-                <div x-show="result" class="card p-8">
+                <div x-show="result" class="card p-8 mx-auto w-full max-w-2xl">
                     <h2 class="font-bold text-rich-black text-xl mb-4">Proyeksi Investasi</h2>
                     <div class="space-y-3 mb-4">
                         <div class="flex justify-between p-3 bg-subtle-ash rounded-xl"><span class="text-sm text-cool-gray">Total Modal Disetor</span><span class="font-bold">Rp <span x-text="fmt(result?.total_contributions)"></span></span></div>
@@ -90,11 +88,10 @@
                 </div>
             </div>
         </div>
-
-        {{-- Tab: Anggaran --}}
-        <div x-show="tab==='anggaran'" x-data="anggaranSim()">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="card p-8">
+ 
+        <div x-show="tab==='anggaran'" x-data="anggaranSim()" class="w-full flex justify-center">
+            <div :class="result ? 'grid grid-cols-1 lg:grid-cols-2 gap-8' : 'flex justify-center'" class="w-full max-w-5xl mx-auto">
+                <div class="card p-8 mx-auto w-full max-w-2xl">
                     <h2 class="font-bold text-rich-black text-xl mb-2">Simulasi Anggaran Bulanan</h2>
                     <p class="text-sm text-cool-gray mb-6">Metode 50/30/20: Kebutuhan, Keinginan, Tabungan</p>
                     <div>
@@ -108,7 +105,7 @@
                         <div class="flex justify-between p-3 bg-sky-mist rounded-xl"><span class="text-sm font-medium text-rich-black">Tabungan (20%)</span><span class="font-bold text-blue-700">Rp <span x-text="fmt(result?.savings)"></span></span></div>
                     </div>
                 </div>
-                <div x-show="result" class="card p-8">
+                <div x-show="result" class="card p-8 mx-auto w-full max-w-2xl">
                     <h2 class="font-bold text-rich-black text-xl mb-4">Rincian Anggaran</h2>
                     <div class="space-y-2">
                         <template x-for="item in (result?.breakdown || [])">
