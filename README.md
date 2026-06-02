@@ -1,4 +1,4 @@
-# 🪙 CerdasFin — Platform Literasi & Edukasi Keuangan Interaktif
+# CerdasFin — Platform Literasi & Edukasi Keuangan Interaktif
 
 CerdasFin adalah platform Learning Management System (LMS) mini yang dirancang khusus untuk meningkatkan literasi keuangan masyarakat Indonesia secara interaktif. Platform ini fokus memberikan edukasi mendalam guna melindungi masyarakat dari ancaman finansial modern, seperti jebakan **Pinjaman Online (Pinjol) Ilegal** dan kecanduan **Judi Online (Judol)**.
 
@@ -6,7 +6,7 @@ Proyek ini dikembangkan menggunakan framework **Laravel** dan **Tailwind CSS** s
 
 ---
 
-## 🚀 Fitur Utama
+## Fitur Utama
 
 ### 1. Force-Learning Workflow (Kurikulum Terarah)
 Sistem memaksa alur pembelajaran yang terstruktur demi menghasilkan data peningkatan pemahaman yang valid dan terukur:
@@ -40,7 +40,7 @@ Sistem memaksa alur pembelajaran yang terstruktur demi menghasilkan data peningk
 
 ---
 
-## 📦 Cara Install dan Menjalankan Proyek di Lokal
+## Cara Install dan Menjalankan Proyek di Lokal
 
 Jika ingin menjalankan proyek ini di komputer lokal, ikuti langkah-langkah berikut:
 
