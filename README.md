@@ -1,59 +1,78 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🪙 CerdasFin — Platform Literasi & Edukasi Keuangan Interaktif
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+CerdasFin adalah platform Learning Management System (LMS) mini yang dirancang khusus untuk meningkatkan literasi keuangan masyarakat Indonesia secara interaktif. Platform ini fokus memberikan edukasi mendalam guna melindungi masyarakat dari ancaman finansial modern, seperti jebakan **Pinjaman Online (Pinjol) Ilegal** dan kecanduan **Judi Online (Judol)**.
 
-## About Laravel
+Proyek ini dikembangkan menggunakan framework **Laravel** dan **Tailwind CSS** sebagai pemenuhan tugas besar UAS mata kuliah Pemrograman Web Lanjut.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 1. Force-Learning Workflow (Kurikulum Terarah)
+Sistem memaksa alur pembelajaran yang terstruktur demi menghasilkan data peningkatan pemahaman yang valid dan terukur:
+* **Satu Pintu Edukasi (Menu Modul):** Mengintegrasikan daftar kursus langsung ke dalam 4 modul utama.
+* **Gerbang Pre-Test Wajib:** Pengguna wajib menyelesaikan Pre-Test sebelum dapat mengakses materi pembelajaran untuk menguji pengetahuan awal.
+* **Direct Learning Access:** Setelah *submit* kuis, pengguna langsung dialihkan (*direct redirect*) ke halaman detail materi tanpa halaman perantara yang mubazir.
 
-## Learning Laravel
+### 2. 4 Modul Kurikulum Inti
+* **Fondasi:** Dasar-dasar literasi keuangan, pentingnya menabung, dan prinsip dasar pengelolaan uang.
+* **Waspada:** Mengupas tuntas ciri-ciri pinjol ilegal, legalitas OJK, dan bahaya bunga majemuk yang mencekik.
+* **Lindungi:** Edukasi berbasis data mengenai matematika kekalahan judi online serta strategi psikologis untuk keluar dari kecanduan.
+* **Sejahtera:** Pengenalan instrumen investasi aman (emas, deposito, reksa dana) dan pembentukan dana darurat.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 3. Simulasi Keuangan Real-Time (Interactive Calculators)
+* **Kalkulator Bahaya Pinjol Ilegal:** Mensimulasikan bagaimana skema bunga harian pinjol ilegal dapat membengkakkan utang secara eksponensial dalam hitungan hari.
+* **Kalkulator Investasi Aman:** Menghitung potensi pertumbuhan aset masa depan menggunakan efek *compound interest* (bunga berbunga).
+* **Perencana Anggaran 50/30/20:** Membagi penghasilan bulanan pengguna secara otomatis ke dalam pos Kebutuhan (50%), Keinginan (30%), dan Tabungan (20%).
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 4. UI/UX Modern & Responsif
+* Menggunakan palet warna bertema *Nature & Trust* (*Mint Green Glow* dan *Deep Fern Green*).
+* Desain kartu modul yang bersih, dilengkapi visualisasi komponen gambar lokal (`<img>` tag dengan efek `hover:scale-105`), serta tata letak kalkulator yang presisi di tengah (*centered layout*).
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Spesifikasi Teknologi (Tech Stack)
 
-### Premium Partners
+* **Backend Framework:** Laravel 11 / 10
+* **Frontend Styling:** Tailwind CSS
+* **Animation Engine:** GSAP (GreenSock Animation Platform) & ScrollTrigger via CDN
+* **Database:** MySQL / MariaDB
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 📦 Cara Install dan Menjalankan Proyek di Lokal
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Jika ingin menjalankan proyek ini di komputer lokal, ikuti langkah-langkah berikut:
 
-## Code of Conduct
+1. **Clone Repositori**
+   ```bash
+   git clone [https://github.com/Zaryan19/CerdasFin.git](https://github.com/Zaryan19/CerdasFin.git)
+   cd CerdasFin
+Install Dependency Composer
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Bash
+composer install
+Install & Build Aset Frontend
 
-## Security Vulnerabilities
+Bash
+npm install
+npm run dev
+Konfigurasi Environment
+Salin file .env.example menjadi .env, lalu sesuaikan konfigurasi database Anda.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Bash
+cp .env.example .env
+Generate Application Key
 
-## License
+Bash
+php artisan key:generate
+Migrasi Database & Seeder
+Jalankan migrasi untuk membuat tabel beserta data awal kuis/modul bawaan.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Bash
+php artisan migrate --seed
+Jalankan Server Lokal
+
+Bash
+php artisan serve
+Buka browser dan akses alamat http://127.0.0.1:8000.
