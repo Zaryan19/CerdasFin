@@ -33,46 +33,92 @@ Sistem memaksa alur pembelajaran yang terstruktur demi menghasilkan data peningk
 
 ## 🛠️ Spesifikasi Teknologi (Tech Stack)
 
-* **Backend Framework:** Laravel 11 / 10
+* **Backend Framework:** Laravel
 * **Frontend Styling:** Tailwind CSS
 * **Animation Engine:** GSAP (GreenSock Animation Platform) & ScrollTrigger via CDN
 * **Database:** MySQL / MariaDB
 
 ---
 
-## Cara Install dan Menjalankan Proyek di Lokal
+## 📦 Cara Install dan Menjalankan Proyek di Lokal
 
-Jika ingin menjalankan proyek ini di komputer lokal, ikuti langkah-langkah berikut:
+Ikuti langkah-langkah berikut secara berurutan untuk memasang dan menjalankan proyek ini di komputer lokal Anda:
 
 1. **Clone Repositori**
-   ```bash
+```bash
    git clone [https://github.com/Zaryan19/CerdasFin.git](https://github.com/Zaryan19/CerdasFin.git)
    cd CerdasFin
-Install Dependency Composer
+
+
+
+
+
+
+Install Dependency PHP (Composer)
 
 Bash
-composer install
+
+   composer install
+
+
+
+
+
+
 Install & Build Aset Frontend
 
 Bash
-npm install
-npm run dev
+
+   npm install
+   npm run dev
+
+
+
+
+
+
 Konfigurasi Environment
-Salin file .env.example menjadi .env, lalu sesuaikan konfigurasi database Anda.
+
+Salin file konfigurasi contoh bawaan Laravel menjadi file .env lokal, lalu buka file .env tersebut untuk menyesuaikan nama database Anda.
 
 Bash
-cp .env.example .env
+
+   cp .env.example .env
+
+
+
+
+
+
 Generate Application Key
 
 Bash
-php artisan key:generate
+
+   php artisan key:generate
+
+
+
+
+
+
 Migrasi Database & Seeder
-Jalankan migrasi untuk membuat tabel beserta data awal kuis/modul bawaan.
+
+Jalankan perintah ini untuk membuat seluruh struktur tabel database sekaligus mengisi data awal kurikulum, modul, dan kuis bawaan proyek.
 
 Bash
-php artisan migrate --seed
+
+   php artisan migrate --seed
+
+
+
+
+
+
 Jalankan Server Lokal
 
 Bash
-php artisan serve
-Buka browser dan akses alamat http://127.0.0.1:8000.
+
+   php artisan serve
+
+
+Setelah server menyala, buka browser Anda dan akses alamat: http://127.0.0.1:8000
