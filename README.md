@@ -38,4 +38,58 @@ Sistem memaksa alur pembelajaran yang terstruktur demi menghasilkan data peningk
 * **Animation Engine:** GSAP (GreenSock Animation Platform) & ScrollTrigger via CDN
 * **Database:** MySQL / MariaDB
 
+## 📦 Cara Install dan Menjalankan Proyek di Lokal
 
+Ikuti langkah-langkah berikut untuk memasang dan menjalankan proyek pada lingkungan lokal:
+
+```bash
+# Clone repository
+git clone https://github.com/Zaryan19/CerdasFin.git
+cd CerdasFin
+
+# Install dependency PHP
+composer install
+
+# Install dependency frontend dan jalankan Vite
+npm install
+npm run dev
+
+# Salin file environment
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+
+# Migrasi database dan jalankan seeder
+php artisan migrate --seed
+
+# Menjalankan server Laravel
+php artisan serve
+```
+
+Setelah server berhasil dijalankan, buka browser dan akses:
+
+```text
+http://127.0.0.1:8000
+```
+
+### Konfigurasi Database
+
+Sebelum menjalankan proses migrasi, pastikan konfigurasi database pada file `.env` telah disesuaikan dengan lingkungan lokal yang digunakan.
+
+Contoh:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=cerdasfin
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Perintah `php artisan migrate --seed` akan secara otomatis:
+
+- Membuat seluruh struktur tabel database.
+- Menjalankan migrasi yang dibutuhkan sistem.
+- Mengisi data awal (seed data) yang digunakan oleh aplikasi.
